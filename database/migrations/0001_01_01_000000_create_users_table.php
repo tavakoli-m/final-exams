@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('phone_number', 10);
+            $table->string('password');
+            $table->tinyInteger('role')->comment('1 => admin, 2 => area, 3 => corrector, 4 => objection corrector');
+            $table->tinyInteger('status')->default(1)->comment('1 => active, 0 => inactive');
             $table->timestamps();
         });
 
