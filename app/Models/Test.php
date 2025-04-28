@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Test extends Model
 {
@@ -17,4 +18,9 @@ class Test extends Model
         'objection_status',
         'answer',
     ];
+
+    public function questions() : HasMany
+    {
+        return $this->hasMany(TestQuestion::class);
+    }
 }
