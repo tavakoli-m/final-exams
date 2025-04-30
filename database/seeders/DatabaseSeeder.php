@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TestQuestionScore::class);
         $this->call(TestPaperSeeder::class);
         $this->call(TestPaperResultSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }
